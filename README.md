@@ -23,7 +23,7 @@ O requisito é ter acesso HTTPS de saida para a URL da nossa API https://api-dat
 ### Sistema operacional
 
 - Ubuntu
-- acesso `sudo` para instalacao e reinicio do servico
+- acesso `sudo` para instalacao e reinicio do serviço
 
 ### Acesso ao banco de dados
 
@@ -54,7 +54,7 @@ Vamos precisar de:
 
 - a aplicacao do listener MIS
 - um arquivo seguro de ambiente com as configuracoes de conexão
-- um servico Linux chamado `pis-linux-listener.service`
+- um serviço Linux chamado `pis-linux-listener.service`
 
 ## O que talvez precisemos que voce forneca
 
@@ -79,25 +79,25 @@ A sua máquina so precisa permanecer ligada, conectada a rede e com acesso ao ba
 
 ## Comandos que talvez voce precise
 
-### Verificar se o servico esta rodando
+### Verificar se o serviço esta rodando
 
 ```bash
 sudo systemctl status pis-linux-listener.service
 ```
 
-### Reiniciar o servico
+### Reiniciar o serviço
 
 ```bash
 sudo systemctl restart pis-linux-listener.service
 ```
 
-### Iniciar o servico
+### Iniciar o serviço
 
 ```bash
 sudo systemctl start pis-linux-listener.service
 ```
 
-### Parar o servico
+### Parar o serviço
 
 ```bash
 sudo systemctl stop pis-linux-listener.service
@@ -115,7 +115,7 @@ sudo journalctl -u pis-linux-listener.service -n 200 --no-pager
 sudo journalctl -u pis-linux-listener.service -f
 ```
 
-### Se o arquivo do servico foi alterado
+### Se o arquivo do serviço foi alterado
 
 ```bash
 sudo systemctl daemon-reload
@@ -124,7 +124,7 @@ sudo systemctl restart pis-linux-listener.service
 
 ## Solucao simples de problemas
 
-### O servico esta parado
+### O serviço esta parado
 
 1. Verifique o status:
 
