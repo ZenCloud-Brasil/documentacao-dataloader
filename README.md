@@ -1,4 +1,4 @@
-# Guia Ubuntu do Cliente: MIS Data Listener
+# Guia Ubuntu do Cliente: PIS Linux
 
 ## O que este servico faz
 
@@ -54,7 +54,7 @@ Normalmente vamos precisar de:
 
 - a aplicacao do listener MIS
 - um arquivo seguro de ambiente com as configuracoes de conexao
-- um servico Linux chamado `mis-dataloader-listener.service`
+- um servico Linux chamado `pis-linux-listener.service`
 
 ## O que talvez precisemos que voce forneca
 
@@ -82,44 +82,44 @@ A sua maquina so precisa permanecer ligada, conectada a rede e com acesso ao ban
 ### Verificar se o servico esta rodando
 
 ```bash
-sudo systemctl status mis-dataloader-listener.service
+sudo systemctl status pis-linux-listener.service
 ```
 
 ### Reiniciar o servico
 
 ```bash
-sudo systemctl restart mis-dataloader-listener.service
+sudo systemctl restart pis-linux-listener.service
 ```
 
 ### Iniciar o servico
 
 ```bash
-sudo systemctl start mis-dataloader-listener.service
+sudo systemctl start pis-linux-listener.service
 ```
 
 ### Parar o servico
 
 ```bash
-sudo systemctl stop mis-dataloader-listener.service
+sudo systemctl stop pis-linux-listener.service
 ```
 
 ### Ver logs recentes
 
 ```bash
-sudo journalctl -u mis-dataloader-listener.service -n 200 --no-pager
+sudo journalctl -u pis-linux-listener.service -n 200 --no-pager
 ```
 
 ### Acompanhar logs em tempo real
 
 ```bash
-sudo journalctl -u mis-dataloader-listener.service -f
+sudo journalctl -u pis-linux-listener.service -f
 ```
 
 ### Se o arquivo do servico foi alterado
 
 ```bash
 sudo systemctl daemon-reload
-sudo systemctl restart mis-dataloader-listener.service
+sudo systemctl restart pis-linux-listener.service
 ```
 
 ## Solucao simples de problemas
@@ -129,19 +129,19 @@ sudo systemctl restart mis-dataloader-listener.service
 1. Verifique o status:
 
 ```bash
-sudo systemctl status mis-dataloader-listener.service
+sudo systemctl status pis-linux-listener.service
 ```
 
 2. Reinicie:
 
 ```bash
-sudo systemctl restart mis-dataloader-listener.service
+sudo systemctl restart pis-linux-listener.service
 ```
 
 3. Se continuar falhando, veja os logs:
 
 ```bash
-sudo journalctl -u mis-dataloader-listener.service -n 200 --no-pager
+sudo journalctl -u pis-linux-listener.service -n 200 --no-pager
 ```
 
 ### Erro de ODBC ou banco de dados
@@ -200,7 +200,7 @@ Entre em contato conosco se:
 Na maioria dos casos, estes sao os unicos comandos que voce vai precisar:
 
 ```bash
-sudo systemctl status mis-dataloader-listener.service
-sudo systemctl restart mis-dataloader-listener.service
-sudo journalctl -u mis-dataloader-listener.service -n 200 --no-pager
+sudo systemctl status pis-linux-listener.service
+sudo systemctl restart pis-linux-listener.service
+sudo journalctl -u pis-linux-listener.service -n 200 --no-pager
 ```
