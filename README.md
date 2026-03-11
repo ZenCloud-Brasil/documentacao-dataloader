@@ -144,56 +144,6 @@ sudo systemctl restart pis-linux-listener.service
 sudo journalctl -u pis-linux-listener.service -n 200 --no-pager
 ```
 
-### Erro de ODBC ou banco de dados
-
-Causas comuns:
-
-- driver ODBC nao instalado
-- nome do DSN incorreto
-- servidor de banco inacessivel
-- usuario ou senha alterados
-
-Verificacoes uteis:
-
-```bash
-odbcinst -j
-```
-
-Se houver um DSN configurado e o `isql` estiver disponivel:
-
-```bash
-isql -v NOME_DO_SEU_DSN
-```
-
-### Erro de conectividade HTTPS
-
-Causas comuns:
-
-- VPN desconectada
-- regra de firewall de saida ausente
-- restricao de proxy
-- problema de resolucao DNS
-- indisponibilidade temporaria do nosso endpoint HTTPS
-
-Se necessario, um teste simples de conectividade e:
-
-```bash
-curl -I https://SEU-ENDPOINT-MIS
-```
-
-Se o servico mostrar falhas repetidas de upload ou de polling, reinicie-o depois que a conectividade for restaurada.
-
-## Quando entrar em contato conosco
-
-Entre em contato conosco se:
-
-- o servico continuar parando depois do reinicio
-- o driver ODBC for atualizado ou removido
-- a senha do banco mudar
-- o hostname ou IP do servidor mudar
-- o acesso HTTPS de saida para a nossa API mudar
-- a maquina for substituida ou reinstalada
-- os resultados das consultas parecerem incompletos ou duplicados
 
 ## Versao curta
 
