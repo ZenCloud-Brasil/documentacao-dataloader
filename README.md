@@ -1,81 +1,81 @@
 # Guia Ubuntu do Cliente: PIS Linux
 
-## O que este servico faz
+## O que este serviço faz
 
-Vamos instalar um servico em segundo plano na sua maquina Ubuntu. Esse servico recebe comandos do nosso sistema central via HTTPS, le dados do seu banco Progress local e envia os dados extraidos de volta para nos via HTTPS.
+Vamos instalar um serviço em segundo plano na sua máquina Ubuntu. Esse serviço recebe comandos do nosso sistema central via HTTPS, lê dados do seu banco Progress e envia os dados extraídos de volta para nós via HTTPS.
 
-O servico inicia automaticamente quando a maquina liga. Ninguem precisa fazer login para ele funcionar.
+O serviço inicia automaticamente quando a máquina liga. Não sendo necessário login ao iniciar.
 
 ## Observacao importante sobre rede
 
-Este servico foi planejado para usar apenas HTTPS na comunicacao entre a sua maquina e o nosso ambiente.
+Este serviço foi planejado para usar apenas HTTPS na comunicação entre a sua maquina e o nosso ambiente.
 
-Isso significa que a sua maquina nao precisa de acesso direto a:
+Isso significa que a sua máquina nao precisa de acesso direto a:
 
 - porta do nosso PostgreSQL
 - porta do nosso RabbitMQ
 - porta do nosso Redis
 
-O requisito normal e ter acesso HTTPS de saida para a URL da nossa API.
+O requisito é ter acesso HTTPS de saida para a URL da nossa API https://api-dataloader.manhattan.bi/.
 
 ## O que a sua maquina precisa ter
 
 ### Sistema operacional
 
-- Ubuntu 22.04 LTS ou 24.04 LTS recomendado
+- Ubuntu
 - acesso `sudo` para instalacao e reinicio do servico
 
 ### Acesso ao banco de dados
 
-- acesso desta maquina Ubuntu ao banco Progress/OpenEdge local
-- driver ODBC do Progress/OpenEdge instalado
-- DSN ODBC ou informacoes de conexao configuradas e testadas
-- usuario de banco com permissao somente leitura, de preferencia
+- acesso desta maquina Ubuntu ao banco Progress
+- driver ODBC do Progress instalado
+- DSN ODBC ou informacoes de conexão configuradas e testadas
+- usuário de banco com permissao somente leitura, de preferência
 
 ### Acesso de rede
 
-A maquina precisa de acesso de saida para:
+A maquina precisa de acesso de saída para:
 
 - a URL HTTPS da nossa API
 - o host do seu banco local/interno
 
-Nao e necessario expor nenhuma porta publica para esse servico.
+Não e necessário expor nenhuma porta publica para esse serviço, apenas de conexão com a url: https://api-dataloader.manhattan.bi/.
 
 ### Pacotes basicos
 
-Normalmente vamos precisar de:
+Vamos precisar de:
 
 - `python3`
 - `python3-venv`
 - `unixodbc`
-- o driver ODBC do fornecedor do Progress/OpenEdge
+- o driver ODBC do fornecedor do Progress
 
 ## O que nos vamos instalar
 
 - a aplicacao do listener MIS
-- um arquivo seguro de ambiente com as configuracoes de conexao
+- um arquivo seguro de ambiente com as configuracoes de conexão
 - um servico Linux chamado `pis-linux-listener.service`
 
 ## O que talvez precisemos que voce forneca
 
-- versao do Ubuntu
+- versão do Ubuntu
 - hostname da maquina
-- pacote do driver ODBC do Progress/OpenEdge ou a forma de download
+- pacote do driver ODBC do Progress ou a forma de download
 - nome do DSN, ou host/porta/banco/usuario/senha do banco
 - regras de firewall ou VPN permitindo HTTPS de saida para a URL da nossa API
 - uma pessoa de contato que possa executar comandos com `sudo`, se necessario
 
 ## Operacao normal
 
-Normalmente voce nao precisa fazer nada.
+Normalmente voce não precisa fazer nada.
 
 Nos administramos:
 
 - quais consultas existem
 - quando elas rodam
-- se a execucao e manual ou agendada
+- se a execucao é manual ou agendada
 
-A sua maquina so precisa permanecer ligada, conectada a rede e com acesso ao banco local e ao nosso endpoint HTTPS.
+A sua máquina so precisa permanecer ligada, conectada a rede e com acesso ao banco local e ao nosso endpoint HTTPS.
 
 ## Comandos que talvez voce precise
 
