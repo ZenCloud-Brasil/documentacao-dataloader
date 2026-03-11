@@ -6,7 +6,7 @@ Vamos instalar um serviço em segundo plano na sua máquina Ubuntu. Esse serviç
 
 O serviço inicia automaticamente quando a máquina liga. Não sendo necessário login ao iniciar.
 
-## Observacao importante sobre rede
+## Observação importante sobre rede
 
 Este serviço foi planejado para usar apenas HTTPS na comunicação entre a sua maquina e o nosso ambiente.
 
@@ -41,7 +41,7 @@ A maquina precisa de acesso de saída para:
 
 Não e necessário expor nenhuma porta publica para esse serviço, apenas de conexão com a url: https://api-dataloader.manhattan.bi/.
 
-### Pacotes basicos
+### Pacotes básicos
 
 Vamos precisar de:
 
@@ -50,13 +50,13 @@ Vamos precisar de:
 - `unixodbc`
 - o driver ODBC do fornecedor do Progress
 
-## O que nos vamos instalar
+## O que nós vamos instalar
 
 - a aplicacao do listener MIS
 - um arquivo seguro de ambiente com as configuracoes de conexão
 - um serviço Linux chamado `pis-linux-listener.service`
 
-## O que talvez precisemos que voce forneca
+## O que talvez precisemos que você forneca
 
 - versão do Ubuntu
 - hostname da maquina
@@ -65,7 +65,7 @@ Vamos precisar de:
 - regras de firewall ou VPN permitindo HTTPS de saida para a URL da nossa API
 - uma pessoa de contato que possa executar comandos com `sudo`, se necessario
 
-## Operacao normal
+## Operação
 
 Normalmente voce não precisa fazer nada.
 
@@ -79,7 +79,7 @@ A sua máquina so precisa permanecer ligada, conectada a rede e com acesso ao ba
 
 ## Comandos que talvez voce precise
 
-### Verificar se o serviço esta rodando
+### Verificar se o serviço está rodando
 
 ```bash
 sudo systemctl status pis-linux-listener.service
@@ -122,7 +122,7 @@ sudo systemctl daemon-reload
 sudo systemctl restart pis-linux-listener.service
 ```
 
-## Solucao simples de problemas
+## Solução simples de problemas
 
 ### O serviço esta parado
 
@@ -145,9 +145,9 @@ sudo journalctl -u pis-linux-listener.service -n 200 --no-pager
 ```
 
 
-## Versao curta
+## Versão curta
 
-Na maioria dos casos, estes sao os unicos comandos que voce vai precisar:
+Na maioria dos casos, esses sao os unicos comandos que você vai precisar:
 
 ```bash
 sudo systemctl status pis-linux-listener.service
